@@ -1,0 +1,32 @@
+###
+Linux 系统中采用三位十进制数表示权限，如0755， 0644.
+ABCD
+A- 0， 表示十进制
+B－用户
+C－组用户
+D－其他用户
+ 
+---  -> 0   (no excute , no write ,no read)
+--x  -> 1   excute, (no write, no read)
+-w-  -> 2   write 
+-wx  -> 3   write, excute
+r--  -> 4   read
+r-x  -> 5   read, excute
+rw-  -> 6   read, write , 
+rwx  -> 7   read, write , excute
+ 
+0755->即用户具有读/写/执行权限，组用户和其它用户具有读写权限；
+0644->即用户具有读写权限，组用户和其它用户具有只读权限；
+0600->仅拥有者具有文件的读取和写入权限
+
+一般赋予目录0755权限，文件0644权限。
+如：
+use Cwd;
+$PATH = getcwd;
+mkdir($PATH/path, 0755);
+# make a new folder in current working diectory.
+ 
+Reference:
+1. perldoc
+2. CSDN: http://bbs.csdn.net/topics/90452405
+###
